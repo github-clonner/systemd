@@ -7,6 +7,7 @@ After=network.target
 Type=simple
 User=root
 ExecStart=/usr/bin/socat -d -d TCP-LISTEN:3022,reuseaddr,fork,su=nobody TCP:localhost:22
+# ExecStart=/usr/bin/socat -lf /var/log/socat.log TCP6-LISTEN:3022,reuseaddr,fork,bind=[2001:....:1] TCP4:localhost:22
 # ExecStart=/usr/bin/socat -u pty,link=/dev/ttyP1 tcp:192.168.4.17:8088,forever,interval=10,fork
 Restart=on-failure
 
