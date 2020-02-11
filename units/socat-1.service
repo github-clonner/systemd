@@ -1,2 +1,0 @@
-[Service]
-ExecStart=/usr/bin/socat TCP-LISTEN:8888 'SYSTEM:echo Hello World'
