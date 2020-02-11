@@ -1,0 +1,15 @@
+[Unit]
+Description=Socat Greeting Service
+Documentation=man:socat(1)
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nobody
+ExecStart=/usr/bin/socat -d -d TCP-LISTEN:3022,reuseaddr,fork,su=nobody TCP:localhost:22
+# ExecStart=/usr/bin/socat -u pty,link=/dev/ttyP1 tcp:192.168.4.17:8088,forever,interval=10,fork
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
