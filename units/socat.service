@@ -4,7 +4,7 @@ Documentation=man:socat(1)
 After=network.target
 
 [Service]
-Type=simple
+Type=forking
 User=nobody
 Group=nobody
 ExecStart=/usr/bin/socat -d -d TCP-LISTEN:3022,reuseaddr,fork,su=nobody TCP:localhost:22
